@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+
 // Middleware
 app.use(logger("dev"));
 
@@ -17,15 +18,17 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Require Routes
-require("./routes/api-routes")(app);
-require("./routes/html-routes")(app);
+app.use(require('./routes/api-routes'));
+app.use(require('./routes/html-routes'));
 
 mongoose.connect("mongodb://localhost/budget", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
 
-// routes here
+mongoose.connection.on('connected', ()=>{
+  console.log('Connected to Mongoose');
+})
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);

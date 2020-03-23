@@ -1,10 +1,9 @@
-const express = require('express');
-const app = express;
+const router = require("express").Router();
 
 
-module.exports = (app) =>{
 
-app.get('/', (req, res)=>{
+
+router.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname + 'index.html'), (err)=>{
         if(err) throw err;
     });
@@ -13,7 +12,4 @@ app.get('/', (req, res)=>{
 
 
 
-
-
-
-}
+module.exports = router;

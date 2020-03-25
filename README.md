@@ -10,6 +10,9 @@ Web application that tracks user expenses and funds, and displays the informatio
 
 The application is deployed at [this link](https://jh-budgetapp.herokuapp.com/). To use the application simply enter the name and dollar amount of the transaction, and select whether funds are being added or subtracted. Disconnect from the internet and repeat these steps, and then reconnect.
 
+![budget1](/public/images/budget1.png)
+![budget2](/public/images/budget2.png)
+
 ## Technologies Used
 
 * MongoDB & Mongoose
